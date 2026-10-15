@@ -1,0 +1,34 @@
+{
+  "name": "gitlab-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that exposes the GitLab REST API as tools for AI clients, targeting older self-hosted GitLab instances such as GitLab 10.1.1",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "gitlab-mcp": "src/index.mjs"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinclouds/gitlab-mcp.git"
+  },
+  "homepage": "https://github.com/kevinclouds/gitlab-mcp",
+  "bugs": "https://github.com/kevinclouds/gitlab-mcp/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gitlab",
+    "gitlab-api",
+    "stdio"
+  ],
+  "scripts": {
+    "build": "find src -name '*.mjs' -print0 | xargs -0 -n1 node --check",
+    "start": "node src/index.mjs"
+  }
+}
