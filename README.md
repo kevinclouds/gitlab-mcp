@@ -28,17 +28,19 @@ MCP server that turns the GitLab REST API v4 into tools for AI clients. It targe
   "mcpServers": {
     "gitlab": {
       "command": "npx",
-      "args": ["-y", "--package=github:kevinclouds/gitlab-mcp#main", "gitlab-mcp"],
+      "args": ["-y", "--package=github:kevinclouds/gitlab-mcp#v0.1.0", "gitlab-mcp"],
       "env": {
         "GITLAB_URL": "https://gitlab.example.com",
-        "GITLAB_PRIVATE_TOKEN": "<your token>"
+        "GITLAB_PRIVATE_TOKEN": "<your token>",
+        "GITLAB_ALLOW_WRITE": "true",
+        "GITLAB_ALLOW_DELETE": "true"
       }
     }
   }
 }
 ```
 
-`npx` downloads the repository over Git, so the machine needs Git access to GitHub. A released tag can be pinned with `#<tag>` instead of `#main`.
+`npx` downloads the repository over Git, so the machine needs Git access to GitHub. This example pins the `v0.1.0` release and enables write and delete tools.
 
 ### From a local checkout
 

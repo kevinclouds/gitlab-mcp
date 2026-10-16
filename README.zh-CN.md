@@ -28,17 +28,19 @@
   "mcpServers": {
     "gitlab": {
       "command": "npx",
-      "args": ["-y", "--package=github:kevinclouds/gitlab-mcp#main", "gitlab-mcp"],
+      "args": ["-y", "--package=github:kevinclouds/gitlab-mcp#v0.1.0", "gitlab-mcp"],
       "env": {
         "GITLAB_URL": "https://gitlab.example.com",
-        "GITLAB_PRIVATE_TOKEN": "<你的 Token>"
+        "GITLAB_PRIVATE_TOKEN": "<你的 Token>",
+        "GITLAB_ALLOW_WRITE": "true",
+        "GITLAB_ALLOW_DELETE": "true"
       }
     }
   }
 }
 ```
 
-`npx` 会通过 Git 下载仓库，机器需要有 GitHub 的 Git 访问权限。可用 `#<tag>` 固定到具体版本。
+`npx` 会通过 Git 下载仓库，机器需要有 GitHub 的 Git 访问权限。本示例固定使用 `v0.1.0`，并开启创建、修改和删除工具。
 
 ### 本地运行
 
